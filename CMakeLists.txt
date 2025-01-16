@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.25.0)
 
-project(pclog VERSION 0.2.0 LANGUAGES CXX)
+project(pclog VERSION 3 LANGUAGES CXX)
 
 add_library(pclog SHARED source/pclog/pclog.cpp)
 
@@ -11,12 +11,12 @@ if(LINUX)
 install(TARGETS pclog DESTINATION /usr/lib)
 
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/
-    DESTINATION /usr/include/
+    DESTINATION /usr/include/prescription
     FILES_MATCHING PATTERN "*.hpp"
 )
 
 set(CPACK_GENERATOR "DEB")
-set(CPACK_PACKAGE_NAME ${PROJECT_NAME})
+set(CPACK_PACKAGE_NAME libpclog)
 set(CPACK_PACKAGE_VERSION ${PROJECT_VERSION})
 set(CPACK_PACKAGE_VENDOR "oknauta")
 set(CPACK_PACKAGE_HOMEPAGE_URL "https://github.com/prescriptioncodes/pclog")
